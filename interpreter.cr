@@ -31,7 +31,11 @@ def main
 
   while programStatus
   
+    puts "\n"
+    puts "<><><<><><>><<><<>><><>><><><><><><><><><>"
     puts "Enter a String #: "
+    puts "\n"
+    
     inputString = gets
    
 
@@ -64,7 +68,7 @@ def main
     end
 
    
-    programStatus = false
+   
     
   end
 

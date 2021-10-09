@@ -1,4 +1,5 @@
-require "./errorHandler"
+require "./errorHandler" # import errorHandler Class
+
 class ValidateStartEnd
 
     def self.vStartEnd( data : String | Nil) : Bool
@@ -6,14 +7,12 @@ class ValidateStartEnd
         #Delcare Error Handler Object
         errormsg = ErrorHandler
 
+        #Store String size 
         dataSize = data.size
-        puts data
-        puts dataSize
-
         
-        startCharOne = data.char_at(0)
-        startCharSecond= data.char_at(1)
-        start = "#{startCharOne}#{startCharSecond}"
+        startCharOne = data.char_at(0)#first char of the String
+        startCharSecond= data.char_at(1)#second char of string
+        start = "#{startCharOne}#{startCharSecond}" #join first and second characters
         
         endCharOne = data.char_at(dataSize-4)
         endCharSecond = data.char_at(dataSize-3)
