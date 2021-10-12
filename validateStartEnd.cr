@@ -1,4 +1,5 @@
 require "./errorHandler" # import errorHandler Class
+require "./derivation" #import Derivation class
 
 class ValidateStartEnd
 
@@ -6,6 +7,7 @@ class ValidateStartEnd
         
         #Delcare Error Handler Object
         errormsg = ErrorHandler
+        der = Derivation
 
         #Store String size 
         dataSize = data.size
@@ -32,7 +34,10 @@ class ValidateStartEnd
             return false
 
         end
-        
+
+        # derString = "go <commands> stop"
+        # der.derRightMost(derString)
+       
         return true
 
     end

@@ -36,9 +36,11 @@ class ValidateXY
     def self.verifyX(data) : Bool
 
          x = "abcdefghi"  
+
          if x.matches?(/#{data}/)
             return true
          end
+         
         return false
     end
 
