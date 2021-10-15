@@ -32,7 +32,46 @@ class ValidateXY
         return true
     
     end
+    
+    #Validate single x values
+    def self.validatex(data) : Bool
 
+        #declare object
+        errormsg = ErrorHandler
+        
+        x = "a b c d e f g h i" 
+
+        if !verifyX(data)
+            
+            errormsg.errorHandler("Error Sytnax : #{data} is an invalid value for x. Valid x values : #{x}")
+            return false
+        end
+
+        return true
+    
+    end
+
+    #Validate single y values
+    def self.validatey(data) : Bool
+
+        #declare object
+        errormsg = ErrorHandler
+       
+        y = "1 2 3 4 5 6 7 8 9"
+
+        if !verifyY(data)
+            errormsg.errorHandler("Error Sytnax : #{data} is an invalid value for y. Valid y values : #{y}")
+            return false
+        end
+
+        return true
+
+
+    end
+
+  
+
+    #Validate x values 
     def self.verifyX(data) : Bool
 
          x = "abcdefghi"  
@@ -40,10 +79,11 @@ class ValidateXY
          if x.matches?(/#{data}/)
             return true
          end
-         
+
         return false
     end
 
+    #validate y values
     def self.verifyY(data) : Bool
         
          y = "123456789"

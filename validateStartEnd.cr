@@ -1,5 +1,6 @@
 require "./errorHandler" # import errorHandler Class
 require "./derivation" #import Derivation class
+require "./validateCmd"
 
 class ValidateStartEnd
 
@@ -35,8 +36,15 @@ class ValidateStartEnd
 
         end
 
-        # derString = "go <commands> stop"
-        # der.derRightMost(derString)
+        valcmd = ValidateCmd
+
+        if(valcmd.commaExist(data))
+
+            puts "Comma exist"
+        end
+
+        #derString = "go <commands> stop"
+        #der.derRightMost(derString) 
        
         return true
 
