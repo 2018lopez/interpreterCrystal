@@ -2,6 +2,7 @@ require "./validateStartEnd" #import validateStartEnd class
 require "./validateXY" # import validateXY class
 require "./validateCmd" # import validateCmd class
 require "./derivation" # import Derivation class
+require "./draw"
 
 class LangRecognizer
 
@@ -13,6 +14,7 @@ class LangRecognizer
         valxy = ValidateXY # declare object to validate x and y values
         valcmd = ValidateCmd # declare object to validate commands
         der = Derivation
+        d = DrawShape
 
         return if data.nil?
         dataW = data.delete(" ")#remove all whitespace of the string input
@@ -30,6 +32,8 @@ class LangRecognizer
                 puts "Printing derivations"
 
                 der.printDerivation
+                d.draw
+
             else
                 
                 puts "errors"

@@ -33,15 +33,27 @@ class ValidateCmd
         counter = 0
 
         
-
-       
-        
-        
-        
+        hasComma = true
 
         while counter < dataSize
+
+            if counter != 0
+                counter = counter + 1   
+            end
+            if counter < dataSize && counter != 0
+                
+                hasComma = verifyCommaSytnax("#{data.char_at(counter-1)}")
+
+            end
+
+            if !hasComma
+                errormsg.errorHandler("Error Sytnax: '#{data.char_at(counter-1)}' should have being ','. Please state ',' if you want to enter another command': #{draw}")
+                return false
+            elsif hasComma && (counter+1) > dataSize
+                errormsg.errorHandler("Error Sytnax: '#{data.char_at(counter-1)}' have being stated yet no command was provided. Please state another command if you want to input ','': #{draw}")
+                return false 
+            end
             
-            puts "#{counter}: #{data.char_at(counter)} "
             case data.char_at(counter)
 
             when 'r', 'c'

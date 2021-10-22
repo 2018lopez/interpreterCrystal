@@ -1,0 +1,12 @@
+---
+version: 1.0
+shards:
+  aquaplot:
+    git: https://github.com/crystal-data/aquaplot.git
+    version: 0.1.0+git.commit.a0373276c15996842826214b7f580c88a589347e
+  crsfml:
+    git: https://github.com/oprypin/crsfml.git
+    version: 2.5.2
+  ishi:
+    git: https://github.com/toddsundsted/ishi.git
+    version: 0.7.5

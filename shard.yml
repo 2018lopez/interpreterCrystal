@@ -1,0 +1,22 @@
+name: src
+version: 0.1.0
+
+# authors:
+#   - name <email@example.com>
+
+# description: |
+#   Short description of src
+
+dependencies:
+  crsfml:
+    github: oprypin/crsfml
+    version: ~> 2.5.2
+  ishi:
+    github: toddsundsted/ishi
+#     version: "~> 0.5"
+
+# development_dependencies:
+#   webmock:
+#     github: manastech/webmock.cr
+
+# license: MIT
