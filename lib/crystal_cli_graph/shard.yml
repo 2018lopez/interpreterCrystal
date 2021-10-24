@@ -1,0 +1,14 @@
+name: crystal_cli_graph
+version: 1.0.0
+description: |
+    An simple generator of text bar graphs.
+
+authors:
+  - masukomi <masukomi@masukomi.org>
+dependencies:
+  crystal_fmt:
+    github: masukomi/crystal_fmt
+
+crystal: 0.23.1
+
+license: MIT

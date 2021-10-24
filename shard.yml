@@ -9,10 +9,21 @@ version: 0.1.0
 
 dependencies:
   crsfml:
-    github: oprypin/crsfml
-    version: ~> 2.5.2
+  github: oprypin/crsfml
+  version: ~> 2.5.2
+
   ishi:
     github: toddsundsted/ishi
+
+  crystal_cli_graph:
+    github: masukomi/crystal_cli_graph
+  
+  cryplot:
+    github: naqvis/cryplot
+
+  grlib:
+    github: jmakino/gr-crystal
+
 #     version: "~> 0.5"
 
 # development_dependencies:

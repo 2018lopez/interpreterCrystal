@@ -24,24 +24,28 @@ class LangRecognizer
         #puts valxy.verifyxy("f7") func to validate xy values
          if valcmd.valCmd(dataW)
              
-            puts "Enter a c to continue: Display the Derivations#: "
+            puts "Enter a c to continue: To Print the Derivations: "
             inputs = gets
+            # inputTree = gets
+            
 
             if inputs == "c"
-                
-                puts "Printing derivations"
+            
+                der.derRightMost(dataW)
 
-                der.printDerivation
-                d.draw
+                puts "Enter a c to continue: To Display the Draw: "
+                inputDraw = gets
 
-            else
-                
-                puts "errors"
+                if inputDraw == "c"
+
+                    d.draw
+
+                end
+            
             end
+            
 
          end
-        
-
 
        end
         
