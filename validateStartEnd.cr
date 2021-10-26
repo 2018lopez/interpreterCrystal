@@ -43,8 +43,6 @@ class ValidateStartEnd
             puts "Comma exist"
         end
 
-        #derString = "go <commands> stop"
-        #der.derRightMost(derString) 
        
         return true
 

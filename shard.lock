@@ -1,5 +1,9 @@
 version: 2.0
 shards:
+  crsfml:
+    git: https://github.com/oprypin/crsfml.git
+    version: 2.5.2
+
   cryplot:
     git: https://github.com/naqvis/cryplot.git
     version: 0.1.0
@@ -15,4 +19,8 @@ shards:
   grlib:
     git: https://github.com/jmakino/gr-crystal.git
     version: 0.1.0+git.commit.6b3c708f635bf668eee719abdfc6af5d15eb671b
+
+  ishi:
+    git: https://github.com/toddsundsted/ishi.git
+    version: 0.7.5
 

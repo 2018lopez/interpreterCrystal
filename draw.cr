@@ -1,13 +1,14 @@
-require "aquaplot"
+require "ishi"
+
 
 class DrawShape
   def self.draw
-    fns = ["3","2", "5", "4"].map do |fn|
-      AquaPlot::Function.new fn
+   
+    Ishi.new do
+      plot([1, 2, 3, 4], [5, 6, 7, 8], pointtype: 1, pointsize: 2)
+    
     end
     
-    plt = AquaPlot::Plot.new fns
-    plt.show
-    plt.close
   end
+  
 end

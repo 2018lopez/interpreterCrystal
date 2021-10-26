@@ -9,8 +9,8 @@ version: 0.1.0
 
 dependencies:
   crsfml:
-  github: oprypin/crsfml
-  version: ~> 2.5.2
+    github: oprypin/crsfml
+    version: ~> 2.5.2
 
   ishi:
     github: toddsundsted/ishi
@@ -23,6 +23,7 @@ dependencies:
 
   grlib:
     github: jmakino/gr-crystal
+ 
 
 #     version: "~> 0.5"
 

@@ -1,6 +1,8 @@
-require "./langRecognizer"
+require "./langRecognizer" #import Language Recognizer class
 
 def main
+
+  #variable that contain grammar
   grammar = "
   <shapes>→ go <commands> stop
   <commands>→ <draw>
@@ -25,9 +27,9 @@ def main
   puts "------------------------------------------------------------------------"
   puts "\n"
   
-  lang = LangRecognizer
+  lang = LangRecognizer #declare Language Recognizer object
   
-  programStatus = true
+  programStatus = true #declare variable  for program status
 
   while programStatus
   
@@ -36,9 +38,9 @@ def main
     puts "Enter a String #: "
     puts "\n"
     
-    inputString = gets
+    inputString = gets #get user input
    
-
+    #validate if input is equal to EXIT - if yes then it exist the program
     if inputString == "EXIT"
      
       puts "**************************"
@@ -48,11 +50,15 @@ def main
 
     end
 
+    #validate if input is equal to exit - prints a error message and display the correct command to exist the program 
     if inputString == "exit"
-      puts "Wrong Command -> exit to exit the program. Command to exit the program -> EXIT"
+
+      puts "Wrong Command -> exit <- to exit the program. Command to exit the program -> EXIT"
     
     end
 
+
+    #validate if input is equal to g - if yes then prints grammar
     if inputString == "g"
       
       puts "Allowed Grammar"
@@ -60,16 +66,13 @@ def main
       puts ">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
     end
 
-   
+    #validate if input is not equal to g or exit. if yes then string is validate and parse
     if inputString != "g" && inputString != "exit"
       
-      lang.parserString(inputString)
+      lang.parserString(inputString) #object lang call method to parseString
 
     end
 
-   
-   
-    
   end
 
   
