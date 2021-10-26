@@ -36,7 +36,7 @@ class ParseTree
           if dataSize >= 0
               while dataSize >= 1
                   if dataSize != cons
-                      spacer = spacer + spacer
+                      spacer = spacer + "        "
                   end 
   
                   puts spacer + "/     \\"
