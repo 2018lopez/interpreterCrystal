@@ -1,4 +1,5 @@
 require "./langRecognizer" #import Language Recognizer class
+require "./errorHandler" #import Error
 
 def main
 
@@ -28,8 +29,10 @@ def main
   puts "\n"
   
   lang = LangRecognizer #declare Language Recognizer object
+  errormsg = ErrorHandler #declare Error Handler object
   
   programStatus = true #declare variable  for program status
+  
 
   while programStatus
   
@@ -68,8 +71,19 @@ def main
 
     #validate if input is not equal to g or exit. if yes then string is validate and parse
     if inputString != "g" && inputString != "exit"
+     
+      return if inputString.nil?
+      dataSize = inputString.size
+
+      if dataSize < 2
+
+        errormsg.errorHandler("Error : Input String does not meet mininum sytnax: press g to view grammar")
+       
+      else
       
-      lang.parserString(inputString) #object lang call method to parseString
+        lang.parserString(inputString) #object lang call method to parseString
+
+      end
 
     end
 
