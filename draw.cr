@@ -31,6 +31,24 @@ class DrawShape
             SF::Vertex.new(SF.vector2(550,500))
         ]
 
+        # create an array of 3 vertices that define a triangle primitive
+        triangle = SF::VertexArray.new(SF::Triangles, 3)
+
+        # define the positions and colors of the triangle's points
+        triangle[0] = SF::Vertex.new(SF.vector2(400, 400), SF::Color::White)
+        triangle[1] = SF::Vertex.new(SF.vector2(300, 300), SF::Color::White)
+        triangle[2] = SF::Vertex.new(SF.vector2(200, 200), SF::Color::White)
+
+        shape = SF::CircleShape.new(50)
+        # set the shape color to green
+        shape.fill_color = SF.color(100, 250, 50)
+        shape.position = { 200, 300}
+
+        # define a 120x50 rectangle
+        rectangle = SF::RectangleShape.new(SF.vector2(120, 50))
+        # change the size to 100x100
+        rectangle.size = SF.vector2(100, 50)
+        rectangle.position = { 400, 100}
        
         line1 = SF::RectangleShape.new(SF.vector2(30, 2))
         line1.position = {118, 485}
@@ -68,6 +86,41 @@ class DrawShape
         line9.position = {518, 485}
         line9.rotate(90)
          
+        liney1 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney1.position = {95, 465}
+        liney1.rotate(180)
+
+        liney2 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney2.position = {95, 415}
+        liney2.rotate(180)
+
+        liney3 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney3.position = {95, 365}
+        liney3.rotate(180)
+
+        liney4 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney4.position = {95, 315}
+        liney4.rotate(180)
+
+        liney5 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney5.position = {95, 265}
+        liney5.rotate(180)
+
+        liney6 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney6.position = {95, 215}
+        liney6.rotate(180)
+
+        liney7 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney7.position = {95, 165}
+        liney7.rotate(180)
+
+        liney8 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney8.position = {95, 115}
+        liney8.rotate(180)
+
+        liney9 = SF::RectangleShape.new(SF.vector2(30, 2))
+        liney9.position = {95, 65}
+        liney9.rotate(180)
          
         
        # Declare and load a font
@@ -186,19 +239,8 @@ class DrawShape
          view.center()
 
 
-        
-        
+  
 
-
-       # create a quad
-        quad = SF::VertexArray.new(SF::Quads, 4)
-
-        # define it as a rectangle, located at (10, 10) and with size 100x100
-        # define its texture area to be a 25x50 rectangle starting at (0, 0)
-        quad.append SF::Vertex.new({ 10,  10}, tex_coords: { 90,  90})
-        quad.append SF::Vertex.new({110,  110}, tex_coords: {100,  100})
-        quad.append SF::Vertex.new({110, 110}, tex_coords: {200, 50})
-        quad.append SF::Vertex.new({ 100, 110}, tex_coords: { 50, 50})
 
        
 
@@ -207,6 +249,9 @@ class DrawShape
     
       window.draw(liney, SF::Lines)
       window.draw(linex,SF::Lines)
+      window.draw(shape)
+      window.draw(rectangle)
+    
       window.draw(line1)
       window.draw(line2)
       window.draw(line3)
@@ -216,6 +261,17 @@ class DrawShape
       window.draw(line7)
       window.draw(line8)
       window.draw(line9)
+
+      window.draw(liney1)
+      window.draw(liney2)
+      window.draw(liney3)
+      window.draw(liney4)
+      window.draw(liney5)
+      window.draw(liney6)
+      window.draw(liney7)
+      window.draw(liney8)
+      window.draw(liney9)
+
 
       window.draw(x1)
       window.draw(x2)
@@ -239,7 +295,7 @@ class DrawShape
 
       window.draw(ylabel)
       window.draw(xlabel)
-     
+      
 
       # end the current frame
       window.display
