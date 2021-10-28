@@ -1,39 +1,42 @@
 
-require "./errorHandler"
+require "./errorHandler" #import error handler class
 
 class ParseTree
 
+    #declare global variables
     @@global_counter  = 0
     @@final_result = ""
     @@global_spacer = "        "
   
   
-      def self.derRightMost(data)
+        def self.derRightMost(data)
   
           return if data.nil?
           @@global_counter  = 0
           @@final_result = ""
   
-  
+          #remove go and stop from input String
           data = data.strip("go")
           data = data.chomp("stop")
   
           data = data.split(",")#remove all whitespace of the string input
-  
+        
+          #initialize variables
           cons = data.size 
           cons = cons - 1
   
           dataSize = data.size
           dataSize = dataSize - 1
           counter = 1
-  
+        
+          #prints the first part of the parse tree
           puts "    <program>  "
           puts "  /     |      \\"
           puts "go <commands> stop"
   
           spacer = "       "
   
-          if dataSize >= 0
+            if dataSize >= 0
               while dataSize >= 1
                   if dataSize != cons
                       spacer = spacer + "        "
@@ -59,17 +62,16 @@ class ParseTree
                   inCmds = "<draw>, " * counter + "<draw>"
                   @@global_counter = counter
   
-          end  
+            end  
   
           dataSize = data.size - 1
+
           while dataSize >= 0
-                  printCmd(data[dataSize])
-                  dataSize -= 1
-              end
-             
-         
-  
-      end
+            printCmd(data[dataSize])
+            dataSize -= 1
+          end
+
+        end
   
       def self.printCmd(data)
        
@@ -88,7 +90,7 @@ class ParseTree
               case data.char_at(counter)
   
               when 'r', 'c'
-                  counter=0
+                  counter = 0
                   shape = "#{data.char_at(counter)}#{data.char_at(counter+1)}#{data.char_at(counter+2)}"
   
                       puts @@global_spacer * (@@global_counter) + "      |"
@@ -112,7 +114,7 @@ class ParseTree
                       @@global_counter -= 1
   
               when 't'
-                      counter=0
+                      counter = 0
                       shape = "#{data.char_at(counter)}#{data.char_at(counter+1)}#{data.char_at(counter+2)}"
                       puts @@global_spacer * (@@global_counter) + "      |"
                       puts "go " + "<draw>, " * @@global_counter + "#{shape} <xy>.<xy>.<xy>" + @@final_result  + "stop"
@@ -146,8 +148,9 @@ class ParseTree
                      @@final_result =  ", #{shape} <#{data.char_at(posThirdx)}#{data.char_at(posThirdy)}>.<#{data.char_at(posSecondx)}#{data.char_at(posSecondy)}>.<#{data.char_at(posx)}#{data.char_at(posy)}>" + @@final_result
                      @@global_counter -= 1
              
-              when 'a', 'f'
-                      counter=0
+              when 'a', 'f' 
+
+                      counter = 0
                      
                       shape = "#{data.char_at(counter)}#{data.char_at(counter+1)}#{data.char_at(counter+2)}#{data.char_at(counter+3)}"
                   
